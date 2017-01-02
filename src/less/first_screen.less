@@ -1,0 +1,93 @@
+.first_screen {
+	background: url(../img/first-screen-bg.jpg) no-repeat @grey;
+	background-position: center bottom;
+	background-size: cover;
+	color: @white;
+	padding-top: 20vh;
+	min-height: 90vh;
+	box-shadow:0 0 0 100vw rgba(0, 0, 0, 0.33) inset;
+	ul.fs-list {
+		padding: 0;
+		li.fs-item {
+			list-style-type: none; 
+			text-transform: uppercase;
+			text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+			font-size: 1.5rem;
+			.ubuntu-bold;
+			&:before {
+				content: "\f00c";
+			    font-family: FontAwesome;
+			    font-style: normal;
+			    font-weight: normal;
+			    text-decoration: inherit;
+			    padding-right: 5px;
+			}
+		}
+	}
+	.fs-free {
+		text-transform: uppercase;
+		.ubuntu-bold;
+		font-size: 2rem;
+	}
+	.fs-form {
+		right: 0;
+		position: absolute;
+		background-color: @white;
+		border: 7px solid @border-grey;
+		border-radius: 5px;
+		width: 360px;
+		padding: 15px;
+		color: @black;
+		&-header {
+			text-transform: uppercase;
+			font-size: 1.5rem;
+			.ubuntu-bold;
+			margin-bottom: 30px;
+		}
+		&-label {
+			.ubuntu-bold;
+			font-size: 1rem;
+		}
+		&-polity {
+			text-decoration: none;
+			color: @black;
+		}
+		.i-phone {
+			width: 100%;
+			font-size: 1.25rem;
+			background: url(../img/phone-receiver.png) no-repeat scroll 10px 50%;
+			padding-left:30px;
+		}
+	}
+}
+@media (min-width: 0px) and (max-width: 480px) {
+	.first_screen { 
+		padding-top: 5vh;
+		padding-bottom: 5vh;
+		height: 100vh;
+	}
+	span.fs-free {
+		text-align: center !important;
+		display: inherit;
+	}
+	.fs-helper {
+		margin-top: 1vh;
+	}
+	li.fs-item, .fs-free {
+		font-size: 0.75rem !important;
+	}
+	.fs-form {
+		right: auto !important;
+		margin: 0 auto!important;
+		position: static !important;
+		width: 90% !important;
+		max-width: 300px;
+		&-header {
+			font-size: 1rem !important;
+			margin-bottom: 15px !important;
+		}
+		&-label {
+			font-size: 0.75rem !important;
+		}
+	}
+}
