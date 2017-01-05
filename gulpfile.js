@@ -80,7 +80,7 @@ gulp.task('style:build', function () {
         .pipe(rigger())
         .pipe(less()) //Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
-        .pipe(cssmin()) //Сожмем
+        //.pipe(cssmin()) //Сожмем 
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) //И в build
         .pipe(reload({stream: true}));

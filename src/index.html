@@ -17,9 +17,10 @@
 	//= parts/top_line.html
 	//= parts/first_screen.html
 	//= parts/slider-section.html
-	//= parts/timeline.html
-	//= parts/horizontal-form.html
-	//= parts/faq.html
+  //= parts/timeline.html
+	//= parts/our-profits.html
+  //= parts/horizontal-form.html
+	//= parts/otzivi.html
 	//= parts/map.html
 	//= parts/top_line.html
 	//= parts/callback.html
@@ -32,6 +33,7 @@
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	 <script src="vendor/bootstrap.js"></script>
 	 <script src="vendor/parallax.min.js"></script>
+   <script src="vendor/jquery.maskedinput.min.js"></script>
 	<link rel="stylesheet" href="js/main.js">
 	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
  <script type="text/javascript">
@@ -147,5 +149,111 @@
 			});
 		});
 	</script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.mobile-slider').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: '<i class="fa mobile-slider-arrows mobile-slider-arrow-left fa-chevron-left"></i>',
+        nextArrow: '<i class="fa mobile-slider-arrows mobile-slider-arrow-right fa-chevron-right"></i>',
+        dots: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.otzivi-slider').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: '<i class="fa otzivi-slider-arrows otzivi-slider-arrow-left fa-chevron-left"></i>',
+        nextArrow: '<i class="fa otzivi-slider-arrows otzivi-slider-arrow-right fa-chevron-right"></i>',
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+    });
+  </script> 
+  <script>
+    $(document).ready(function() {
+      $(".ajaxform").submit(function() {
+        $.ajax({
+          type: "POST",
+          url: "mail.php",
+          data: $(this).serialize()
+        }).done(function() {
+          $(this).find("input").val("");
+          alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+          $("#thanks-modal").modal("show");
+          $(".ajaxform").trigger("reset");
+        });
+        return false;
+      });
+      
+    });
+  </script>
+  <script>
+    jQuery(function($){
+      $(".form-phone, .i-phone").mask("+7 (999) 999-99-99");
+    });
+  </script>
 </body>
 </html>

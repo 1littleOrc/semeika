@@ -5,7 +5,25 @@
 	color: @white;
 	padding-top: 20vh;
 	min-height: 90vh;
-	box-shadow:0 0 0 100vw rgba(0, 0, 0, 0.33) inset;
+	box-shadow:0 0 0 100vw rgba(0, 0, 0, 0.75) inset;
+	.fed-law {
+	display: block;
+	}
+	.fed-law p {
+		display: inline-block;
+		color: #ffd200;
+		border-bottom: 2px dashed #ffd200;
+		-webkit-transition: 500ms;
+		-o-transition: 500ms;
+		transition: 500ms;
+	}
+	.fed-law p:hover {
+		color: #CA9C06;
+		border-bottom: 2px dashed #CA9C06;
+		-webkit-transition: 500ms;
+		-o-transition: 500ms;
+		transition: 500ms;
+	}
 	ul.fs-list {
 		padding: 0;
 		li.fs-item {
@@ -58,6 +76,12 @@
 			background: url(../img/phone-receiver.png) no-repeat scroll 10px 50%;
 			padding-left:30px;
 		}
+		.i-name {
+			width: 100%;
+			font-size: 1.25rem;
+			background: url(../img/person.png) no-repeat scroll 10px 50%;
+			padding-left:30px;
+		}
 	}
 }
 @media (min-width: 0px) and (max-width: 480px) {
@@ -65,6 +89,9 @@
 		padding-top: 5vh;
 		padding-bottom: 5vh;
 		height: 100vh;
+		.fed-law {
+			text-align: center;
+		}
 	}
 	span.fs-free {
 		text-align: center !important;
